@@ -50,7 +50,7 @@ randomNumber = Math.floor(Math.random() * quotes.length);    // generates and as
     }
     randomNumber = Math.floor(Math.random() * quotes.length);    // resets randomNumber if a quote w/ a .seen value of true appears, since a true value would mean a quote which already appeared.
   }
-    counter++     // increments counter
+    counter++;     // increments counter
     quotes[randomNumber].seen = true;    //sets quote.seen to true for use in while loop.
     return quotes[randomNumber];         
 }
@@ -60,19 +60,19 @@ setInterval(printQuote, 30000);   //automatically runs the printQuote() function
 
 function printQuote () {    // calls the getRandomQuote() function and stores the returned quote object in a variable (var quoteObj). Constructs a string using the different properties of the quote object. Manipulates the DOM to display the final HTML string ot the page.
   quoteObj = getRandomQuote();
-  jQuote = quoteObj.quote
-  jSource = quoteObj.source
-  jCitation = quoteObj.citation
-  jYear = quoteObj.year
-  jTag = quoteObj.tag
+  jQuote = quoteObj.quote;
+  jSource = quoteObj.source;
+  jCitation = quoteObj.citation;
+  jYear = quoteObj.year;
+  jTag = quoteObj.tag;
     
     document.body.style.backgroundColor = bgColors[Math.floor(Math.random() * bgColors.length)];       // background color generator which randomly selects a background color from the bgColors array.
 
-  if (jCitation != null && jYear != null){        // conditional statements which print only those properties/values that the selected quote object has.
-      document.getElementById("quote-box").innerHTML = '<p class="quote">' + jQuote + '</p>' + '<p class = "source"> ' + jSource + '<span class = "citation"> ' + jCitation + ' </span> <span class="year"> ' + jYear + ' </span> <span class="tag"> ' + jTag + ' </span></p>'
-  } else if (jCitation != null) {
+  if (jCitation !== null && jYear != null){        // conditional statements which print only those properties/values that the selected quote object has.
+      document.getElementById("quote-box").innerHTML = '<p class="quote">' + jQuote + '</p>' + '<p class = "source"> ' + jSource + '<span class = "citation"> ' + jCitation + ' </span> <span class="year"> ' + jYear + ' </span> <span class="tag"> ' + jTag + ' </span></p>';
+  } else if (jCitation !== null) {
       document.getElementById("quote-box").innerHTML = '<p class="quote">' + jQuote + '</p>' + '<p class = "source"> ' + jSource + '<span class = "citation"> ' + jCitation + ' </span> <span class="tag"> ' + jTag + ' </span></p>';
-  } else if (jYear != null) {
+  } else if (jYear !== null) {
       document.getElementById("quote-box").innerHTML = '<p class="quote">' + jQuote + '</p>' + '<p class = "source"> ' + jSource + '<span class="year"> ' + jYear + ' </span> <span class="tag"> ' + jTag + ' </span></p>';
   } else {
       document.getElementById("quote-box").innerHTML = '<p class="quote">' + jQuote + '</p>' + '<p class = "source"> ' + jSource + '<span class="tag"> ' + jTag + ' </span></p>';
