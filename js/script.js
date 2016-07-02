@@ -47,7 +47,7 @@ randomNumber = Math.floor(Math.random() * quotes.length);    // generates and as
     randomNumber = Math.floor(Math.random() * quotes.length);    // resets randomNumber if a quote w/ a .seen value of true appears, since a true value would mean a quote which already appeared.
   }
     counter++;     // increments the counter
-    quotes[randomNumber].seen = true;    // sets selected quote's 'seen' property to a value of true - for use in while loop.
+    quotes[randomNumber].seen = true;    // sets selected quote's .seen property to a value of true - for use in while loop.
     return quotes[randomNumber];         
 }
 
