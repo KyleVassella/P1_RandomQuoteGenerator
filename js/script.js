@@ -69,11 +69,12 @@ var b = Math.floor(Math.random() * 255);
 var col = "rgb(" + r + "," + g + "," + b + ")";
 document.body.style.backgroundColor = col;  // background color generator which randomly selects a background color
 
+
   if (jCitation != null && jYear != null){        // conditional statements which print only those properties/values that the selected quote object has.
       document.getElementById("quote-box").innerHTML = '<p class="quote">' + jQuote + '</p>' + '<p class = "source"> ' + jSource + '<span class = "citation"> ' + jCitation + '</span><span class="year"> ' + jYear + ' </span> <span class="tag"> ' + jTag + ' </span></p>';
   } else if (jCitation != null) {
       document.getElementById("quote-box").innerHTML = '<p class="quote">' + jQuote + '</p>' + '<p class = "source"> ' + jSource + '<span class = "citation"> ' + jCitation + ' </span> <span class="tag"> ' + jTag + ' </span></p>';
-  } else if (jYear != null) {
+  } else if (jYear !== null) {
       document.getElementById("quote-box").innerHTML = '<p class="quote">' + jQuote + '</p>' + '<p class = "source"> ' + jSource + '<span class="year"> ' + jYear + ' </span> <span class="tag"> ' + jTag + ' </span></p>';
   } else {
       document.getElementById("quote-box").innerHTML = '<p class="quote">' + jQuote + '</p>' + '<p class = "source"> ' + jSource + '<span class="tag"> ' + jTag + ' </span></p>';
@@ -81,3 +82,4 @@ document.body.style.backgroundColor = col;  // background color generator which 
 }
 
   })();
+
