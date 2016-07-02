@@ -74,7 +74,7 @@ document.body.style.backgroundColor = col;  // background color generator which 
       document.getElementById("quote-box").innerHTML = '<p class="quote">' + jQuote + '</p>' + '<p class = "source"> ' + jSource + '<span class = "citation"> ' + jCitation + '</span><span class="year"> ' + jYear + ' </span> <span class="tag"> ' + jTag + ' </span></p>';
   } else if (jCitation != null) {
       document.getElementById("quote-box").innerHTML = '<p class="quote">' + jQuote + '</p>' + '<p class = "source"> ' + jSource + '<span class = "citation"> ' + jCitation + ' </span> <span class="tag"> ' + jTag + ' </span></p>';
-  } else if (jYear !== null) {
+  } else if (jYear != null) {
       document.getElementById("quote-box").innerHTML = '<p class="quote">' + jQuote + '</p>' + '<p class = "source"> ' + jSource + '<span class="year"> ' + jYear + ' </span> <span class="tag"> ' + jTag + ' </span></p>';
   } else {
       document.getElementById("quote-box").innerHTML = '<p class="quote">' + jQuote + '</p>' + '<p class = "source"> ' + jSource + '<span class="tag"> ' + jTag + ' </span></p>';
