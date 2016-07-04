@@ -1,8 +1,6 @@
 /***********************************************************
 This project was tested on Google Chrome, Safari & Firefox
 ***********************************************************/
-(function() {
-  'use strict';   //  tells the JavaScript interpreter to run this program in a strict variant.
 
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);  // event listener to respond to clicks on the page. When user clicks anywhere on the page, the printQuote() function is called.
 
@@ -27,7 +25,7 @@ var quoteObj; //  variable to hold the results (return) of the getRandomQuote() 
 var randomNumber; //  variable to hold a randomly generated number.
 var counter = 0;  //  counter to keep track of how many individual quotes.seen properties have been displayed.
 
-  function clearInterval() {  //  resets the 15 second countdown every time the loadQuote button is pressed - this ensures that the 15 second countdown stays consistent (restarts) each time the loadQuote button is pressed.
+  function myClearInterval() {  //  resets the 15 second countdown every time the loadQuote button is pressed - this ensures that the 15 second countdown stays consistent (restarts) each time the loadQuote button is pressed.
     window.clearInterval(intervalTimer);  //  clears the 15 second countdown.
     intervalTimer = window.setInterval(printQuote, 15000); // immediately re-establishes the 15 second countdown.
   }
@@ -54,7 +52,7 @@ randomNumber = Math.floor(Math.random() * quotes.length);    // generates and as
 
 function printQuote () {    // calls the getRandomQuote() function and stores the returned quote object in a variable (var quoteObj). Constructs a string using the different properties of the quote object. Manipulates the DOM to display the final HTML string ot the page.
 
-    clearInterval();  //calls the clearInterval function which resets the 15 second countdown each time the loadQuote button is pressed, improving UX.
+    myClearInterval();  //calls the clearInterval function which resets the 15 second countdown each time the loadQuote button is pressed, improving UX.
 
   quoteObj = getRandomQuote();
   jQuote = quoteObj.quote;
@@ -70,16 +68,15 @@ var col = "rgb(" + r + "," + g + "," + b + ")";
 document.body.style.backgroundColor = col;  // background color generator which randomly selects a background color
 
 
-  if (jCitation != null && jYear != null){        // conditional statements which print only those properties/values that the selected quote object has.
+  if (jCitation !== undefined && jYear !== undefined){        // conditional statements which print only those properties/values that the selected quote object has.
       document.getElementById("quote-box").innerHTML = '<p class="quote">' + jQuote + '</p>' + '<p class = "source"> ' + jSource + '<span class = "citation"> ' + jCitation + '</span><span class="year"> ' + jYear + ' </span> <span class="tag"> ' + jTag + ' </span></p>';
-  } else if (jCitation != null) {
+  } else if (jCitation !== undefined) {
       document.getElementById("quote-box").innerHTML = '<p class="quote">' + jQuote + '</p>' + '<p class = "source"> ' + jSource + '<span class = "citation"> ' + jCitation + ' </span> <span class="tag"> ' + jTag + ' </span></p>';
-  } else if (jYear != null) {
+  } else if (jYear !== undefined) {
       document.getElementById("quote-box").innerHTML = '<p class="quote">' + jQuote + '</p>' + '<p class = "source"> ' + jSource + '<span class="year"> ' + jYear + ' </span> <span class="tag"> ' + jTag + ' </span></p>';
   } else {
       document.getElementById("quote-box").innerHTML = '<p class="quote">' + jQuote + '</p>' + '<p class = "source"> ' + jSource + '<span class="tag"> ' + jTag + ' </span></p>';
   }
 }
 
-  })();
 
