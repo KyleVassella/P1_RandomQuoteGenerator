@@ -37,7 +37,7 @@ var quotes = [ // an array of quote objects, one of which will display its value
     tag: "| politics",
     seen: false
   }, {
-    quote: "Why are dingleberries brown? That's just the way shit is.",
+    quote: "Why are dingleberries brown? That's just the way sh*t is.",
     source: "Abraham",
     citation: "The Walking Dead",
     tag: "| television",
